@@ -7,7 +7,7 @@ const project = new typescript.TypeScriptProject({
   projenrcTs: true,
 
   publishTasks: true,
-
+  release: true,
 
 });
 
