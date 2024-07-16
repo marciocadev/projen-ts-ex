@@ -12,10 +12,10 @@ const project = new typescript.TypeScriptProject({
 });
 
 const publisher = new Publisher(project, {
-  buildJobId: "my-build-job",
+  buildJobId: 'my-build-job',
   artifactName: 'dist',
 });
 publisher.publishToNpm({
   // registry: 'npm.pkg.github.com'
-})
+});
 project.synth();
