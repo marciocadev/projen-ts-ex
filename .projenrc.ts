@@ -1,4 +1,5 @@
 import { javascript, typescript } from 'projen';
+import { Publisher } from 'projen/lib/release';
 const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: 'main',
   name: 'projen-ts-ex',
@@ -6,5 +7,15 @@ const project = new typescript.TypeScriptProject({
   projenrcTs: true,
 
   publishTasks: true,
+  release: true,
+
+});
+
+const publisher = new Publisher(project, {
+  buildJobId: 'my-build-job',
+  artifactName: 'dist',
+});
+publisher.publishToNpm({
+  // registry: 'npm.pkg.github.com'
 });
 project.synth();
