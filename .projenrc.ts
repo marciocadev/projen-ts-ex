@@ -5,6 +5,6 @@ const project = new typescript.TypeScriptProject({
   packageManager: javascript.NodePackageManager.NPM,
   projenrcTs: true,
 
-  publishTasks: true
+  publishTasks: true,
 });
 project.synth();
